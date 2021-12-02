@@ -1,0 +1,19 @@
+#cloud-config
+autoinstall:
+  version: 1
+  early-commands:
+    # otherwise packer tries to connect and exceed max attempts:
+    - sudo systemctl stop ssh
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+  identity:
+    hostname: ubuntu-server
+    username: packer
+    # Password is just "packer", crypted with `mkpasswd -m sha-512`
+    password: "$6$frkoGmZHCQ4u$KMVcymSLflM9aLzu55ZYb36ckBmDyzJ9FZ35IQmFl2KjIaTYnWxKjqV5558SPvsRJtDCaAuP3vrvCFzVmn1Tv/"
+  ssh:
+    install-server: true
+    allow-pw: true
+  packages:
+    - open-vm-tools
