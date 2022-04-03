@@ -9,12 +9,12 @@ packer {
 
 variable "iso_url" {
   type    = string
-  default = "https://releases.ubuntu.com/20.04.3/ubuntu-20.04.3-live-server-amd64.iso"
+  default = "https://releases.ubuntu.com/20.04.4/ubuntu-20.04.4-live-server-amd64.iso"
 }
 
 variable "iso_checksum" {
   type    = string
-  default = "file:https://releases.ubuntu.com/20.04.3/SHA256SUMS"
+  default = "file:https://releases.ubuntu.com/20.04.4/SHA256SUMS"
 }
 
 #      builder      unique name
